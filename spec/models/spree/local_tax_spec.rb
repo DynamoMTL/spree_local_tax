@@ -26,6 +26,20 @@ describe Spree::LocalTax do
   let(:tax_calculator) { @tax_calculator }
   let(:tax_address) { @tax_address }
 
+  context "zip tax backend" do
+    before do
+      ZipTax.key = '123456' #real key is required in production. VCR response was saved with a proper key
+      @zip_tax_category = FactoryGirl.create :tax_category_with_zip_tax
+      @calculator = @zip_tax_category.tax_rates.first.calculator
+    end
+    it "should return rates from ZipTax API" do
+      VCR.use_cassette('zip_tax_response') do
+        tax_amount = @calculator.find_local_tax(order.ship_address)
+        tax_amount.should_not == 0.0
+      end
+    end
+  end
+
   context "sql backend" do
     it "should use zones default tax rate if not overridden" do
 

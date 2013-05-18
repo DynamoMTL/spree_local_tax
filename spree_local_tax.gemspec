@@ -16,6 +16,7 @@ Gem::Specification.new do |s|
   s.requirements << 'none'
 
   s.add_dependency 'spree_core', '~> 1.3.0'
+  s.add_dependency 'zip_tax'
 #  s.add_dependency 'ruport'
 #  s.add_dependency 'spree_advanced_reporting'
 
@@ -29,4 +30,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'sqlite3'
   s.add_development_dependency 'shoulda-matchers'
   s.add_development_dependency 'ffaker'
+  s.add_development_dependency 'vcr'
+  s.add_development_dependency 'fakeweb'
 end

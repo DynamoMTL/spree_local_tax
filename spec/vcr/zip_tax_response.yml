@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.zip-tax.com/request/v20?key=123456&postalcode=20170
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Sat, 18 May 2013 14:49:02 GMT
+      server:
+      - Apache/2.2.17 (Ubuntu)
+      x-powered-by:
+      - PHP/5.3.5-1ubuntu7.3
+      set-cookie:
+      - PHPSESSID=cmbgptqo5ia4a06t8ul38ndpb5; path=/
+      cache-control:
+      - no-cache
+      content-length:
+      - '462'
+      connection:
+      - close
+      content-type:
+      - application/json
+    body:
+      encoding: US-ASCII
+      string: ! '{"version":"v20","rCode":100,"results":[{"geoPostalCode":"20170","geoCity":"HERNDON","geoCounty":"FAIRFAX","geoState":"VA","taxSales":0.050000000745058,"taxUse":0.050000000745058,"txbService":"N","txbFreight":"N","stateSalesTax":0.03999999910593,"stateUseTax":0.03999999910593,"citySalesTax":0,"cityUseTax":0,"cityTaxCode":"","countySalesTax":0.0099999997764826,"countyUseTax":0.0099999997764826,"countyTaxCode":"51059","districtSalesTax":0,"districtUseTax":0}]}'
+    http_version: '1.0'
+  recorded_at: Sat, 18 May 2013 14:49:06 GMT
+recorded_with: VCR 2.4.0

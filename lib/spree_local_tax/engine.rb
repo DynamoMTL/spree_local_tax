@@ -11,6 +11,7 @@ module SpreeLocalTax
 
     initializer 'spree.register.local_tax', :after => "spree.register.calculators" do |app|
        app.config.spree.calculators.tax_rates << Spree::Calculator::LocalTax
+       app.config.spree.calculators.tax_rates << Spree::Calculator::ZipTax
     end
 
     def self.activate

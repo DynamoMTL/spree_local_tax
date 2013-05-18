@@ -16,6 +16,10 @@ module SpreeLocalTax
         run 'bundle exec rake railties:install:migrations FROM=spree_local_tax'
       end
 
+      def create_initializer_file
+        create_file "config/initializers/zip_tax.rb", "# Add your ZipTax Api key. ZipTax.key = 'yourkey'"
+      end
+
       def run_migrations
          res = ask 'Would you like to run the migrations now? [Y/n]'
          if res == '' || res.downcase == 'y'

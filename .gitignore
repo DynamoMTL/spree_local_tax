@@ -9,3 +9,4 @@ nbproject
 *.swp
 spec/dummy
 Guardfile
+.ruby-version
