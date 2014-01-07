@@ -10,3 +10,4 @@ nbproject
 spec/dummy
 Guardfile
 .ruby-version
+.bundle
