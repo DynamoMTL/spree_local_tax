@@ -6,7 +6,8 @@ module Spree
       I18n.t(:avalara_tax)
     end
 
-    def compute(order)
+    def compute(line_item)
+      order = line_item.order
       invoice = avalara.generate(order, rate.tax_category)
       amount  = avalara.compute(invoice)
 
