@@ -6,9 +6,9 @@ module Spree
       I18n.t(:avalara_tax)
     end
 
-    def compute(line_item)
-      order = line_item.order
-      invoice = avalara.generate(order, rate.tax_category)
+    def compute_line_item(line_item)
+
+      invoice = avalara.generate(line_item, rate.tax_category)
       amount  = avalara.compute(invoice)
 
       round_to_two_places(amount)
@@ -22,3 +22,4 @@ module Spree
     end
   end
 end
+
