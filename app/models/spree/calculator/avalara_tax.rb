@@ -13,7 +13,7 @@ module Spree
 
       round_to_two_places(amount)
     rescue
-      compute_order(order)
+      0
     end
 
   private
