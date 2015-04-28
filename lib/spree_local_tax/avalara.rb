@@ -13,7 +13,7 @@ module SpreeLocalTax::Avalara
 
       variant = line_item.variant
       product = variant.product
-      builder.add_line(variant.sku, product.name, line_item.quantity, line_item.total) if product.tax_category == tax_category
+      builder.add_line(variant.sku, product.name, line_item.quantity, line_item.discounted_amount) if product.tax_category == tax_category
 
     builder.invoice
   end
