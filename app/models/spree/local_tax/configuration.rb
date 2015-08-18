@@ -9,5 +9,6 @@ module SpreeLocalTax
     preference :origin_state, :string
     preference :origin_country, :string
     preference :origin_zipcode, :string
+    preference :include_order_promo_in_tax_calculation, default: false
   end
 end
